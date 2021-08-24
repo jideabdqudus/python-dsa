@@ -4,9 +4,10 @@ def cafeteria(n, k, m, s):
         if people not in arr:
             arr.append(people)
     print(len(arr) - m)
-cafeteria(n=15, k=2, m=3, s=[11, 6, 14])
-cafeteria(n=10, k=2, m=2, s=[3,6])
-cafeteria(n=10, k=1, m=2, s=[2,6])
+
+# cafeteria(n=15, k=2, m=3, s=[11, 6, 14])
+# cafeteria(n=10, k=2, m=2, s=[3,6])
+# cafeteria(n=10, k=1, m=2, s=[2,6])
 
 def gradingStudents(grades):
     # Write your code here
@@ -26,5 +27,23 @@ def gradingStudents(grades):
             print(x)
     # print(new_grades)
 
-gradingStudents([73, 67, 38, 33])
+# gradingStudents([73, 67, 38, 33])
 # 75,67, 40, 33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
