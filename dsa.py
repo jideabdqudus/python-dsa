@@ -31,19 +31,43 @@ def gradingStudents(grades):
 # 75,67, 40, 33
 
 
+# Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
+# cannot use additional data structures?
+
+def unique_char(characters):
+    arr = list(characters)
+    empty_array = []
+    for x in range(len(arr)):
+        if arr[x] in empty_array:
+            print("False")
+            print(empty_array)
+            return False
+        else:
+            empty_array.append(arr[x])
+    print(empty_array)
+    print("True")
+    return "true"
+
+string = "abcde"
+# unique_char(string)
+# print(len(set(string)) == len(string))
+# print(sorted("abdced"))
 
 
+def url_ify(url):
+    stripped = url.rstrip()
+    empty_array = []
+    for x in stripped:
+        if x == " ":
+            x = "%20"
+            empty_array.append(x)
+        else:
+            empty_array.append(x)
+    final_result = "".join(str(e) for e in empty_array)
+    print(final_result)
+    return final_result
 
 
-
-
-
-
-
-
-
-
-
-
-
+input = "Mr John Smith           "
+url_ify(input)
 
