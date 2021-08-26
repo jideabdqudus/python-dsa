@@ -1,3 +1,5 @@
+import time
+
 def cafeteria(n, k, m, s):
     arr = s.copy()
     for people in range(1+k, n+1, k+1):
@@ -116,24 +118,87 @@ def check_permutation_by_sort(s1, s2):
     print(s1 == s2)
 
 # ru = check_permutation_by_sort("aaab", "bbba")
-
-
 # TACT COA
 # TACO CAT
-
-
-
-
 # print(dict("doggz"))
 
 
-def objectify():
-    dict_one = {
-        "value": True
-    }
-    dict_two = dict_one
-    del dict_one
-    print(dict_two)
-    return dict_two
 
-objectify()
+###################################################################
+
+
+# def confirm_string
+def confirm_string(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    else:
+        if len(set(str1)) > len(set(str2)):
+            big, small = set(str1), set(str2)
+        elif len(set(str1)) < len(set(str2)):
+            big, small = set(str2), set(str1)
+        else:
+            big, small = set(str1), set(str2)
+        if len(big - small) > 1:
+            return False
+        else:
+            return True
+
+
+test_cases = [
+        # no changes
+        ("pale", "pale", True),
+        ("", "", True),
+        # one insert
+        ("pale", "ple", True),
+        ("ple", "pale", True),
+        ("pales", "pale", True),
+        ("ples", "pales", True),
+        ("pale", "pkle", True),
+        ("paleabc", "pleabc", True),
+        ("", "d", True),
+        ("d", "de", True),
+        # one replace
+        ("pale", "bale", True),
+        ("a", "b", True),
+        ("pale", "ble", False),
+        # multiple replace
+        ("pale", "bake", False),
+        # insert and replace
+        ("pale", "pse", False),
+        ("pale", "pas", False),
+        ("pas", "pale", False),
+        ("pkle", "pable", False),
+        ("pal", "palks", False),
+        ("palks", "pal", False),
+        # permutation with insert shouldn't match
+        ("ale", "elas", False),
+]
+
+def solve_issue():
+    start = time.time()
+    for x in test_cases:
+        confirm_string(x[0], x[1])
+    print(f"it took {(time.time_ns() - start)} seconds")
+
+
+string_1 = "pale"
+string_2 = "pale"
+
+solve_issue()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
