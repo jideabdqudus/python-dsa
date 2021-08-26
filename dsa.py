@@ -179,12 +179,10 @@ def solve_issue():
     for x in test_cases:
         confirm_string(x[0], x[1])
     print(f"it took {(time.time_ns() - start)} seconds")
-
-
+    
 string_1 = "pale"
 string_2 = "pale"
-
-solve_issue()
+# solve_issue()
 
 
 
