@@ -82,7 +82,7 @@ def compressed(string):
         print(decompressed)
         return decompressed
 
-compressed("")
+compressed("pythoooooooooooooooooooooooonnnnpl")
 
 
 
