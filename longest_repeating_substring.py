@@ -6,70 +6,64 @@ Test Cases:
 -> Output: 3
 -> Explanation: The answer is "abc", with the length of 3.
 
---> Input: s = "bbbbb"
+--> Input: ss = "bbbbb"
 --> Output: 1
 --> Explanation: The answer is "b", with the length of 1.
 
 """
 
-# -> declare empty string ref
-# -> for each iteration of string, add item to ref
-# -> if item is already in ref,
-# --> initiate count, which is the length of ref
-# ---> re-initiate ref as empty string
-# ---> push the length of count to a new array
-# ---> re-initiate count to zero
-# ---> push new guys to ref
-# Variables: ref, count, empty_array
+string_one = "tmmzuxt"
 
-
-def longest_repeating_substring(string):
-    ref = ""
-    count = 0
-    empty_array = []
-    moves = 0
-    if len(string) < 2:
-        return len(string)
-    for item in string:
-        moves += 1
-        if ref == "":
-            ref += item
-        else:
-            if item not in ref:
-                ref += item
-                if moves == len(string):
-                    count += len(ref)
-                    empty_array.append(count)
-            else:
-                if item in ref:
-                    count += len(ref)
-                    empty_array.append(count)
-                    count = 0
-                    ref = item
-
-    empty_array.sort()
-    print(empty_array)
-    print(empty_array[len(empty_array)-1])
-
-# longest_repeating_substring("asbveaaa")  #5
-
-
-def lengthOfLongestSubstring(string):
+def solution(str):
+    # Space is O(n)
+    # Time is O(n^2)
+    if len(str) <= 1:
+        return len(str)
     longest = 0
-    if len(string) <= 1:
-        return len(string)
-    for left in range(0, len(string), 1):
-        seen_chars = {}
-        current_length = 0
-        for right in range(left, len(string), 1):
-            current_char = string[right]
+    for x in range(0, len(str), 1):
+        hash_map, current_length = {}, 0
+        for y in range(x, len(str), 1):
             try:
-                seen_chars[current_char]
+                str[y] in hash_map[str[y]]
                 break
             except KeyError:
+                hash_map[str[y]] = "True"
                 current_length += 1
-                seen_chars[current_char] = True
-                longest = max(longest, current_length)
+                longest = max(current_length, longest)
+    print(longest)
+    return longest
+
+solution(string_one)
+
+def solutionoptimized(s):
+    if len(s) <= 1:
+        return len(s)
+    seen_chars = {}
+    longest = 0
+    left = 0
+    for x in range(0, len(s), 1):
+        currentChar = s[x]
+        try:
+            prev_char = seen_chars[currentChar]
+            if prev_char >= left:
+                left = prev_char + 1
+        except KeyError:
+            seen_chars[currentChar] = x
+            longest = max(longest, x - left + 1)
     print(longest)
 
-lengthOfLongestSubstring("abcabcbb")
+solutionoptimized(string_one)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
