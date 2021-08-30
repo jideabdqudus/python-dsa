@@ -14,6 +14,9 @@ Test Cases:
 
 string_one = "tmmzuxt"
 
+
+# Working Solution
+
 def solution(str):
     # Space is O(n)
     # Time is O(n^2)
@@ -35,6 +38,8 @@ def solution(str):
 
 solution(string_one)
 
+
+# Optimized Solutin - not working properly
 def solutionoptimized(s):
     if len(s) <= 1:
         return len(s)
