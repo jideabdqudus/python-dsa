@@ -60,15 +60,31 @@ def solutionoptimized(s):
 solutionoptimized(string_one)
 
 
+print("hehere")
+
+s = "deeee"
 
 
+def validSubPalindrome(s, start, end):
+    while start < end:
+        if s[start] != s[end]:
+            print(False)
+            return False
+        start +=1
+        end +=1
+    print(True)
+    return True
+
+def valid_palin(s):
+    p1, p2 = 0, len(s) -1
+    while p1 < p2:
+        if s[p1] != s[p2]:
+            print(validSubPalindrome(s, p1 + 1, p2) | validSubPalindrome(s, p1, p2-1))
+            return validSubPalindrome(s, p1 + 1, p2) | validSubPalindrome(s, p1, p2-1)
+        p1+=1
+        p2-=1
+    print(True)
+    return True
 
 
-
-
-
-
-
-
-
-
+valid_palin(s)
