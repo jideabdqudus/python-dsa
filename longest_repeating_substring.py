@@ -85,6 +85,3 @@ def valid_palin(s):
         p2-=1
     print(True)
     return True
-
-
-valid_palin(s)
