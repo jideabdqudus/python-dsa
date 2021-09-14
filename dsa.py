@@ -184,19 +184,60 @@ string_1 = "pale"
 string_2 = "pale"
 # solve_issue()
 
+class Solution(object):
+    def multiply(num1, num2):
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
+        if (num1 or num2) == "0":
+            print("s")
+            return "0"
+        res1, res2 = 0, 0
+        for n in num1:
+            res1 = res1 * 10 + ord(n) - ord("0")
+        for n in num2:
+            res2 = res2 * 10 + ord(n) - ord("0")
+
+        res = res1 * res2
+        ans = ''
+        while res:
+            ans = ans + (chr(ord('0') + res % 10))
+            print(ans)
+            print(res)
+            res //= 10
+        return ans[::-1]
+
+# Solution.multiply(num1="31", num2="2")
 
 
+numbers = [1,2,3,4,5]
+
+def sub_array_of_array(nums):
+    ref = []
+    for i in range(0, len(nums)+1, 1):
+        for j in range(i):
+            ref.append(nums[j:i])
+    print(ref)
+
+# sub_array_of_array(numbers)
 
 
+prod = [1,2,3,4,5,5]
 
 
+cra = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2}
 
+print(cra.)
 
+freq = {}
+for item in prod:
+    if (item in freq):
+        freq[item] += 1
+    else:
+        freq[item] = 1
 
+# print(freq)
 
-
-
-
-
-
-
+# print(sum(range(len([3,0,1])+1)))

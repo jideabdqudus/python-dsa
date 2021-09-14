@@ -1,22 +1,3 @@
-from collections import deque
-
-deque()
-
-x = deque("abcde")
-x.append("f")
-print(x)
-
-
-# Queue = FIFO
-# Stack = LIFO
-
-""""
-    append #Queue
-    pop #Queue
-    appendleft #Stack 
-    popleft    #Stack
-"""
-
 #Class for the nodes on the linked list
 class Node:
     def __init__(self, data):
@@ -24,7 +5,6 @@ class Node:
         self.next = None
 
     def __repr__(self):
-        print(self.data)
         return self.data
 
 #Class for the linked list
@@ -125,5 +105,31 @@ llist.add_last(Node("e"))
 print(llist)
 
 
-# Doubly Linked Lists
-# Circular Linked Lists
+
+
+#Reverse a linked list
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        prev, currentNode = None, head
+        while currentNode:
+            next = currentNode.next
+            currentNode.next = prev
+            prev = currentNode
+            currentNode = next
+            print(prev)
+        return prev
+
+
+"""
+        prev, currentNode = None, head
+        while currentNode:
+            next = currentNode.next
+            currentNode.next = prev
+            prev = currentNode
+            currentNode = next
+        return prev
+"""
