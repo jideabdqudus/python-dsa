@@ -229,14 +229,25 @@ prod = [1,2,3,4,5,5]
 
 cra = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2}
 
-print(cra.)
-
 freq = {}
 for item in prod:
     if (item in freq):
         freq[item] += 1
     else:
         freq[item] = 1
+
+
+def maxProfit(prices):
+    max_profit, min_price = 0, float('inf')
+    for price in prices:
+        min_price = min(min_price, price)
+        profit = price - min_price
+        max_profit = max(max_profit, profit)
+    return max_profit
+
+maxProfit([7,1,5,3,6,4])
+
+print(len("as12"))
 
 # print(freq)
 
