@@ -247,8 +247,23 @@ def maxProfit(prices):
 
 maxProfit([7,1,5,3,6,4])
 
-print(len("as12"))
+print({1,2,3,4,5} - {4,5})
+
 
 # print(freq)
 
 # print(sum(range(len([3,0,1])+1)))
+
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+ju = ListNode(val=2)
+# ju.next(2)
+# ju.val(4)
+y = 5
+c = None
+b = c or y
+print(b)
+print("a"< "b")
