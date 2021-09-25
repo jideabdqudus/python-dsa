@@ -245,9 +245,8 @@ def maxProfit(prices):
         max_profit = max(max_profit, profit)
     return max_profit
 
-maxProfit([7,1,5,3,6,4])
+# maxProfit([7,1,5,3,6,4])
 
-print({1,2,3,4,5} - {4,5})
 
 
 # print(freq)
@@ -262,8 +261,98 @@ class ListNode(object):
 ju = ListNode(val=2)
 # ju.next(2)
 # ju.val(4)
-y = 5
-c = None
-b = c or y
-print(b)
-print("a"< "b")
+
+
+def build_string(a):
+    arr1 = list(a)
+    empty_arr1 = []
+    for x in range(len(arr1)):
+        if arr1[x] == "#" and len(empty_arr1) > 0:
+            empty_arr1.pop()
+        else:
+            empty_arr1.append(arr1[x])
+    if "#" in empty_arr1:
+        empty_arr1.remove("#")
+    return empty_arr1
+
+
+class Solution(object):
+    def backspaceCompare(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        final_s = build_string(s)
+        final_t = build_string(t)
+        print(" ".join(final_s) == " ".join(final_t))
+        return " ".join(final_s) == " ".join(final_t)
+
+
+
+text = "thestoryofleetcodeandme"
+words = ["story","fleet","leetcode"]
+# Output: [[3,7],[9,13],[10,17]]
+
+
+def stringPair(text, words):
+    dol =[]
+    for i in words:
+        if i in text:
+          dol.append([text.index(i[0]), text.index(i[0])+len(i)-1])
+    print(dol)
+
+# stringPair(text, words)
+
+kill = "asasasasas"
+ref = dict()
+# ref[1] = 3
+# ref[1]+=1
+# nums = [2,2,1,1,1,2,2]
+# k = sorted(nums)[len(nums)//2]
+
+nums = [1,3,4,2,2]
+def something(nums):
+    slow = fast = finder = 0
+    while True:
+        slow = nums[slow] # 1
+        fast = nums[nums[fast]]
+        if slow == fast:
+            while finder != slow:
+                finder = nums[finder]
+                slow = nums[slow]
+            print(finder)
+            return finder
+
+# something(nums)
+
+# seen = set()
+# for num in nums:
+#     if num in seen:
+#         return num
+#     seen.add(num)
+# slow = fast = finder = 0
+# while True:
+#     slow = nums[slow]
+#     fast = nums[nums[fast]]
+#     if slow == fast:
+#         while finder != slow:
+#             finder = nums[finder]
+#             slow = nums[slow]
+#         return finder
+
+# ref = dict()
+# for i in nums:
+#     try:
+#         if ref[i]:
+#             ref[i] += 1
+#     except KeyError:
+#         ref[i] = 1
+# max_key = max(ref, key=ref.get)
+# return max_key
+
+vali = {1: 1, 2: 2, 3: 2, 4: 1, 7: 1, 8: 1}
+
+for i in vali:
+    if vali[i] > 1:
+        print(i)
