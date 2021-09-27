@@ -351,8 +351,55 @@ def something(nums):
 # max_key = max(ref, key=ref.get)
 # return max_key
 
-vali = {1: 1, 2: 2, 3: 2, 4: 1, 7: 1, 8: 1}
+# k =[1,2,3,4,5,6,7,8,9]
+# row = [[]]
+# for i in range(0, len(k)+1, 1):
+#     for j in range(i):
+#         row.append(k[j:i])
+# print(row)
 
-for i in vali:
-    if vali[i] > 1:
-        print(i)
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        current, nxt = head, head
+        while current and current.next:
+            nxt = current.next
+            current.next = nxt.val
+            current = nxt
+        print(current, nxt)
+
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        l, r = 0, 1
+        max_profit = 0
+        while r < len(prices):
+            if prices[l] < prices[r]:
+                profit = prices[r] - prices[l]
+                max_profit = max(profit, max_profit)
+            else:
+                l = r
+            r += 1
+        return max_profit
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a = nums
+        max_so_far =a[0]
+        curr_max = a[0]
+
+        for i in range(1,len(a)):
+            curr_max = max(a[i], curr_max + a[i])
+            max_so_far = max(max_so_far,curr_max)
+
+        return max_so_far
