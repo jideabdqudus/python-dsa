@@ -214,27 +214,27 @@ class Solution(object):
 
 numbers = [1,2,3,4,5]
 
-def sub_array_of_array(nums):
-    ref = []
-    for i in range(0, len(nums)+1, 1):
-        for j in range(i):
-            ref.append(nums[j:i])
-    print(ref)
-
+# def sub_array_of_array(nums):
+#     ref = []
+#     for i in range(0, len(nums)+1, 1):
+#         for j in range(i):
+#             ref.append(nums[j:i])
+#     print(ref)
+#
 # sub_array_of_array(numbers)
-
-
-prod = [1,2,3,4,5,5]
-
-
-cra = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2}
-
-freq = {}
-for item in prod:
-    if (item in freq):
-        freq[item] += 1
-    else:
-        freq[item] = 1
+#
+#
+# prod = [1,2,3,4,5,5]
+#
+#
+# cra = {1: 1, 2: 1, 3: 1, 4: 1, 5: 2}
+#
+# freq = {}
+# for item in prod:
+#     if (item in freq):
+#         freq[item] += 1
+#     else:
+#         freq[item] = 1
 
 
 def maxProfit(prices):
@@ -258,7 +258,7 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-ju = ListNode(val=2)
+
 # ju.next(2)
 # ju.val(4)
 
@@ -290,10 +290,6 @@ class Solution(object):
 
 
 
-text = "thestoryofleetcodeandme"
-words = ["story","fleet","leetcode"]
-# Output: [[3,7],[9,13],[10,17]]
-
 
 def stringPair(text, words):
     dol =[]
@@ -304,8 +300,6 @@ def stringPair(text, words):
 
 # stringPair(text, words)
 
-kill = "asasasasas"
-ref = dict()
 # ref[1] = 3
 # ref[1]+=1
 # nums = [2,2,1,1,1,2,2]
@@ -351,13 +345,6 @@ def something(nums):
 # max_key = max(ref, key=ref.get)
 # return max_key
 
-# k =[1,2,3,4,5,6,7,8,9]
-# row = [[]]
-# for i in range(0, len(k)+1, 1):
-#     for j in range(i):
-#         row.append(k[j:i])
-# print(row)
-
 class Solution(object):
     def reverseList(self, head):
         """
@@ -395,7 +382,7 @@ class Solution(object):
         :rtype: int
         """
         a = nums
-        max_so_far =a[0]
+        max_so_far = a[0]
         curr_max = a[0]
 
         for i in range(1,len(a)):
@@ -403,3 +390,94 @@ class Solution(object):
             max_so_far = max(max_so_far,curr_max)
 
         return max_so_far
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
+
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        dummy = ListNode()
+        tail = dummy
+
+        while l1 and l2:
+            if l1.val < l2.val:
+                tail.next = l1
+                l1 = l1.next
+            else:
+                tail.next = l2
+                l2 = l2.next
+            tail = tail.next
+        if l1:
+            tail.next = l1
+        elif l2:
+            tail.next = l2
+        return dummy.next
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dict = {}
+        for x in range(0, len(nums)):
+            try:
+                currentVal = dict[nums[x]] # Check if there's the element in dict
+                print([currentVal, x])
+                return [currentVal, x]
+            except KeyError:
+                numberToFind = target - nums[x]
+                dict[numberToFind] = x
+        print("None")
+        return None
+
+killa= "asasas"
+
+def validPalindrome(string):
+    value = ''.join(item for item in string if item.isalnum()).lower()
+    print(len(value))
+    m, n = 0, len(value)-1
+    first_char = value[m]
+    last_char = value[n]
+    while m <= n:
+        if first_char == last_char:
+            m += 1
+            n -= 1
+            first_char = value[m]
+            last_char = value[n]
+        elif first_char != last_char:
+            print("False")
+            return False
+    print("True")
+    return True
+
+validPalindrome("a.")
