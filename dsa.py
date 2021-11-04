@@ -480,4 +480,38 @@ def validPalindrome(string):
     print("True")
     return True
 
-validPalindrome("a.")
+# validPalindrome("a.")
+
+
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        str = s
+        if len(str) <= 1:
+            return len(str)
+        longest = 0
+        for x in range(0, len(str), 1):
+            hash_map, current_length = {}, 0
+            for y in range(x, len(str), 1):
+                try:
+                    str[y] in hash_map[str[y]]
+                    break
+                except KeyError:
+                    hash_map[str[y]] = "True"
+                    current_length += 1
+                    longest = max(current_length, longest)
+        print(longest)
+        return longest
+
+
+firstTrans = "Let me know what"
+secondTrans = "you can see from what"
+totalTrans = "Let me know what you can see from what"
+ans = ""
+if firstTrans in totalTrans:
+     ans = totalTrans.replace(firstTrans,'')
+print(ans)
+print(totalTrans)
