@@ -515,3 +515,6 @@ if firstTrans in totalTrans:
      ans = totalTrans.replace(firstTrans,'')
 print(ans)
 print(totalTrans)
+
+
+print("Things don dey change o")
