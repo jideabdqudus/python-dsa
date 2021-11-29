@@ -507,14 +507,41 @@ class Solution(object):
         return longest
 
 
-firstTrans = "Let me know what"
-secondTrans = "you can see from what"
-totalTrans = "Let me know what you can see from what"
-ans = ""
-if firstTrans in totalTrans:
-     ans = totalTrans.replace(firstTrans,'')
-print(ans)
-print(totalTrans)
+# firstTrans = "Let me know what"
+# secondTrans = "you can see from what"
+# totalTrans = "Let me know what you can see from what"
+# ans = ""
+# if firstTrans in totalTrans:
+#      ans = totalTrans.replace(firstTrans,'')
+# print(ans)
+# print(totalTrans)
+#
+"""
+    CTCI V2
+"""
+
+def hasUniqueCharacters(s):
+    print(len(set(string)) == len(string))
+
+# hasUniqueCharacters("abcdefghh")
 
 
-print("Things don dey change o")
+def checkPermutation(a,b):
+    print(set(a) == set(b))
+
+# checkPermutation("2354", "1234")
+
+def urlify(s, l):
+    ref = ""
+    timing = 0
+    for i in s:
+        timing+=1
+        if timing>l:
+            print(ref)
+            return ref
+        if i == " ":
+            ref+="%20"
+        else:
+            ref+=i
+
+urlify("Mr John Smith       ", 13)
