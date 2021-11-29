@@ -544,4 +544,17 @@ def urlify(s, l):
         else:
             ref+=i
 
-urlify("Mr John Smith       ", 13)
+# urlify("Mr John Smith       ", 13)
+
+
+# Failed -> Check Palindrome
+
+def oneAway(s1, s2):
+    a, b = len(set(s1)), len(set(s2))
+    c, d = set(s1), set(s2)
+    if len(d-c) > 1:
+        print("False")
+    else:
+        print("True")
+
+oneAway("ale", "elas")
