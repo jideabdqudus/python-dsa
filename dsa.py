@@ -557,4 +557,34 @@ def oneAway(s1, s2):
     else:
         print("True")
 
-oneAway("ale", "elas")
+# oneAway("ale", "elas")
+
+ref = [0, -4, 2, 3, -4, 1, 3, 6, 1, -4]
+keg = sorted(ref, key=int)
+# print(keg)
+
+jur = set((1,2,3,4,5))
+pur = set((2,3,4,5))
+# print(jur-pur)
+
+
+def missingNumberToo(nums):
+        setted_nums = set(nums)
+        empty_set = set()
+        # sorted_nums = sorted(nums, key=int)
+        for i in range(len(nums)+1):
+            empty_set.add(i)
+        val = empty_set - setted_nums
+        print(val.pop())
+
+
+# missingNumberToo([0,1,3])
+
+red = 'abcde'
+blue = 'cdeeeee'
+yellow = set(red)
+pink = set(blue)
+reg = {}
+reg["a"] = 2
+reg['a'] = reg.get('a') + 1
+print(reg)
