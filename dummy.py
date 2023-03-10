@@ -1,7 +1,5 @@
 x, y, p, q, r = 1,2,3,4, 'pop'
 
-print(r)
-
 print(str(x))
 
 name = 'brad'
